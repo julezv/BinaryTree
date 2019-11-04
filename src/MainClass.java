@@ -17,7 +17,9 @@ public class MainClass {
 
         myTree.traverse(myTree.root);
         myTree.delete(myTree.root, 90);
-        System.out.println("llla");
+        System.out.println("new tree: ");
         myTree.traverse(myTree.root);
+        System.out.println("Value of founf element: ");
+        System.out.println(myTree.findNode(myTree.root, 400).data);
     }
 }

@@ -84,4 +84,17 @@ public  class Tree {
         }
         return currRoot;
     }
+
+//
+    public Node findNode (Node currRoot, int data) {
+        if (currRoot == null) {
+            return null;
+        } else if (data < currRoot.data){
+           currRoot =  findNode(currRoot.left, data);
+        }
+        else if(data > currRoot.data) {
+            currRoot = findNode(currRoot.right, data);
+        }
+        return currRoot;
+    }
 }
