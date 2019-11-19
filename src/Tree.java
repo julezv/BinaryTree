@@ -23,14 +23,25 @@ public  class Tree {
         root = addR(root, newData);
     }
 
+    public void print() {
+        if (root == null)
+            System.out.println("empty tree");
+        else {
+            traverse(root);
+        }
+    }
 
-    public void traverse (Node currRoot){
+    //TODO: toString()
+
+    private void traverse(Node currRoot/*, StringBuilder sb*/){
+        if (currRoot == null)
+            return;
         if (currRoot.left != null){
-            traverse (currRoot.left);
+            traverse(currRoot.left);
         }
         System.out.println(currRoot.data);
         if (currRoot.right != null){
-            traverse (currRoot.right);
+            traverse(currRoot.right);
         }
     }
 
@@ -67,7 +78,7 @@ public  class Tree {
            currRoot.left =  delete(currRoot.left, data);
         } else if (data > currRoot.data) {
             currRoot.right =  delete(currRoot.right, data);
-        } else {
+        } else { //data == currRoot.data
             // case 1, 2:
             if(currRoot.left == null){
                 currRoot = currRoot.right;
